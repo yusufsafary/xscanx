@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Outer wobbly circle -->
+  <path d="M50 8 C62 7,76 10,84 20 C93 31,95 45,92 58 C88 72,78 83,65 89 C52 95,37 94,26 86 C14 77,7 63,8 49 C9 35,17 20,29 13 C37 8,44 9,50 8Z" fill="#c8e6c8" stroke="#2a5e2a" stroke-width="2.5"/>
+  <!-- X mark -->
+  <path d="M32 30 C38 38,46 47,52 55 C56 60,62 67,68 72" stroke="#2a5e2a" stroke-width="5" stroke-linecap="round"/>
+  <path d="M68 30 C62 38,54 47,48 55 C44 60,38 67,32 72" stroke="#2a5e2a" stroke-width="5" stroke-linecap="round"/>
+  <!-- Handle -->
+  <path d="M72 74 L84 87" stroke="#2a5e2a" stroke-width="5" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream: #f4ede0;
+  --cream-dark: #ece4d2;
+  --green-ink: #2a5e2a;
+  --green-mid: #3d7a3d;
+  --green-light: #a8d4a8;
+  --green-pale: #c8e6c8;
+  --ink: #1a1a1a;
+  --ink-muted: #5a5248;
+}
+
+html,
+body {
+  background-color: var(--cream);
+  color: var(--ink);
+}
+
+/* Subtle graph-paper grid background */
+body {
+  background-image:
+    linear-gradient(rgba(42, 94, 42, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(42, 94, 42, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Doodle-style borders */
+.doodle-border {
+  border: 2.5px solid var(--green-ink);
+  border-radius: 2px;
+  box-shadow: 3px 3px 0 var(--green-ink);
+}
+
+.doodle-border-light {
+  border: 2px solid var(--green-ink);
+  border-radius: 2px;
+}
+
+.doodle-btn {
+  border: 2.5px solid var(--green-ink);
+  border-radius: 2px;
+  box-shadow: 3px 3px 0 var(--green-ink);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.doodle-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--green-ink);
+}
+
+.doodle-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--green-ink);
+}
+
+/* Risk badge colors */
+.risk-clean {
+  background-color: #c8e6c8;
+  color: #1a4a1a;
+  border: 2px solid #2a5e2a;
+}
+
+.risk-low {
+  background-color: #e8f5c8;
+  color: #3a4a1a;
+  border: 2px solid #5a7a2a;
+}
+
+.risk-medium {
+  background-color: #f5e6b8;
+  color: #4a3a0a;
+  border: 2px solid #8a6a2a;
+}
+
+.risk-high {
+  background-color: #f5c8c8;
+  color: #4a1a1a;
+  border: 2px solid #8a2a2a;
+}
+
+/* Wiggle animation for doodle feel */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-1deg); }
+  50% { transform: rotate(1deg); }
+}
+
+.wiggle {
+  animation: wiggle 3s ease-in-out infinite;
+}
+
+/* Scanning animation */
+@keyframes scan-line {
+  0% { transform: translateY(0%); opacity: 0.8; }
+  100% { transform: translateY(100%); opacity: 0.2; }
+}
+
+.scan-line {
+  animation: scan-line 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.pulse-slow {
+  animation: pulse-slow 2s ease-in-out infinite;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--green-ink);
+  border-radius: 3px;
+}
+
+/* Focus styles */
+input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(42, 94, 42, 0.25);
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #8a6a2a;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
