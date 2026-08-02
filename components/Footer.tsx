@@ -22,8 +22,8 @@ export default function Footer() {
           </p>
         </div>
         <div className="flex justify-center pt-2">
-          <a href="https://orynth.dev/projects/xscanx" target="_blank" rel="noopener">
-            <img src="https://orynth.dev/api/badge/xscanx?theme=light&style=default" alt="Featured on Orynth" width="260" height="80" />
+          <a href="https://kickstart.easya.io/" target="_blank" rel="noopener">
+            <img src="/easya-kickstart-logo.png" alt="EasyA Kickstart" width="120" height="120" style={{ objectFit: "contain" }} />
           </a>
         </div>
       </div>

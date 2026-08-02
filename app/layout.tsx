@@ -48,11 +48,6 @@ export const metadata: Metadata = {
     title: "xscanx - X Profile Scanner",
     description: "Check if an X profile has been flagged for suspicious crypto activity.",
   },
-  verification: {
-    other: {
-      "ory-verify": "orynth-d0b1175ea38e4c43a5fb081ec4716d3a",
-    },
-  },
   icons: {
     icon: "/favicon.svg",
   },
