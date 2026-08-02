@@ -2,7 +2,6 @@
 
 import { useEffect, useState, FormEvent, useTransition } from "react";
 import { useRouter } from "next/navigation";
-import Logo from "@/components/Logo";
 import { isValidUsername, normalizeUsername } from "@/lib/scanner";
 
 const RECENT_SCANS_KEY = "xscanx:recent-scans";
@@ -52,11 +51,63 @@ export default function HomePage() {
   }
 
   return (
-    <div className="flex-1 flex flex-col items-center justify-start px-4 py-12 sm:py-20">
-      <div className="w-full max-w-lg flex flex-col gap-8">
+    <div className="flex-1 flex flex-col items-center justify-start px-4 py-8 sm:py-14">
+      <div className="w-full max-w-lg flex flex-col gap-7">
+
+        {/* Social / Partner bar */}
+        <div className="flex items-center justify-between flex-wrap gap-3 doodle-border-light bg-cream-dark px-4 py-2.5">
+          {/* Official X account */}
+          <a
+            href="https://x.com/xscanxapp"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 group"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="flex-shrink-0"
+            >
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"
+                fill="#2a5e2a"
+              />
+            </svg>
+            <span className="font-mono text-xs text-green-ink font-semibold group-hover:underline underline-offset-2">
+              @xscanxapp
+            </span>
+            <span className="font-mono text-[10px] text-ink-muted hidden sm:inline">Official</span>
+          </a>
+
+          {/* EasyA Kickstart */}
+          <a
+            href="https://kickstart.easya.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 group"
+          >
+            <img
+              src="/easya-kickstart-logo.png"
+              alt="EasyA Kickstart"
+              width="22"
+              height="22"
+              style={{ objectFit: "contain" }}
+              className="flex-shrink-0"
+            />
+            <span className="font-mono text-xs text-green-ink group-hover:underline underline-offset-2">
+              EasyA Kickstart
+            </span>
+          </a>
+        </div>
+
         {/* Hero */}
-        <div className="flex flex-col items-start gap-3">
-          <Logo size={64} />
+        <div className="flex flex-col items-start gap-2">
+          <h1 className="font-heading text-green-ink text-3xl sm:text-4xl leading-tight tracking-tight">
+            X Profile Scanner
+          </h1>
           <p className="font-mono text-sm text-ink-muted leading-relaxed max-w-sm">
             Check if an X profile has been flagged for suspicious crypto activity by the community.
           </p>
@@ -97,7 +148,7 @@ export default function HomePage() {
           )}
         </form>
 
-        {/* How it works - brief */}
+        {/* How it works */}
         <div className="doodle-border-light bg-cream-dark p-4 flex flex-col gap-2">
           <p className="font-heading text-green-ink text-sm uppercase tracking-wider">How it works</p>
           <ol className="list-none flex flex-col gap-1.5">
@@ -113,11 +164,11 @@ export default function HomePage() {
             ))}
           </ol>
           <a href="/how-to" className="font-mono text-xs text-green-mid underline underline-offset-2 mt-1 self-start hover:text-green-ink">
-            Full guide
+            Full guide →
           </a>
         </div>
 
-        {/* Recent scans decoration */}
+        {/* Recent scans */}
         <div className="flex flex-col gap-2">
           <p className="font-mono text-xs text-ink-muted uppercase tracking-widest">Recent scans</p>
           <div className="flex flex-wrap gap-2">
@@ -135,6 +186,7 @@ export default function HomePage() {
             <p className="font-mono text-[10px] text-ink-muted">Saved on this device. No account required.</p>
           )}
         </div>
+
       </div>
 
       {/* Background doodle decoration */}
